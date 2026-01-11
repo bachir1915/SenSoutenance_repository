@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SenSoutenance.Models
 {
-    [DbConfigurationType(typeof(MySqlEFConfiguration))]
+    [DbConfigurationType(typeof(MySql.Data.EntityFramework.MySqlEFConfiguration))]
     public class BdSenSoutenanceContext: DbContext
     {
         public BdSenSoutenanceContext() :base("connBdSenSoutenance") { }
