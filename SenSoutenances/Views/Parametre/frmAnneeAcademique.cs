@@ -11,16 +11,17 @@ using System.Windows.Forms;
 
 namespace SenSoutenance.Views.Parametre
 {
-    public partial class frmAnneeAcademique : Form
+    public partial class frmAnneeAcademique : global::System.Windows.Forms.Form
     {
         public frmAnneeAcademique()
         {
             InitializeComponent();
         }
 
-        BdSenSoutenanceContext db = new BdSenSoutenanceContext();
+        BdSenSoutenanceContext db;
         private void frmAnneeAcademique_Load(object sender, EventArgs e)
         {
+            db = new BdSenSoutenanceContext();
             dgAnneeAcademique.DataSource = db.anneeAcademiques.ToList(); //CA charge toute les donnee de la base (anneacademique)dans le gredview
         }
 

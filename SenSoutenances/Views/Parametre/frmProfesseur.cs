@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SenSoutenance.Views.Parametre
 {
-    public partial class frmProfesseur : Form
+    public partial class frmProfesseur : global::System.Windows.Forms.Form
     {
         public frmProfesseur()
         {

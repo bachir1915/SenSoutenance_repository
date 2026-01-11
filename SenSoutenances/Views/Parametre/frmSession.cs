@@ -8,18 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ZstdSharp.Unsafe;
 
 namespace SenSoutenance.Views.Parametre
 {
-    public partial class frmSession : Form
+    public partial class frmSession : global::System.Windows.Forms.Form
     {
         public frmSession()
         {
             InitializeComponent();
         }
 
-        BdSenSoutenanceContext db = new BdSenSoutenanceContext();
+        BdSenSoutenanceContext db;
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
@@ -43,6 +42,7 @@ namespace SenSoutenance.Views.Parametre
 
         private void frmSession_Load(object sender, EventArgs e)
         {
+            db = new BdSenSoutenanceContext();
             Effacer();
         }
 

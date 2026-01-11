@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SenSoutenance
 {
-    public partial class frmMDI : Form
+    public partial class frmMDI : global::System.Windows.Forms.Form
     {
         public frmMDI()
         {

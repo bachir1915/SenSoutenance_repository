@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SenSoutenance
 {
-    public partial class frmConnexion : Form
+    public partial class frmConnexion : global::System.Windows.Forms.Form
     {
         public frmConnexion()
         {
