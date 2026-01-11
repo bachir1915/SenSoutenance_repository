@@ -21,8 +21,22 @@ namespace SenSoutenance.Views.Parametre
         BdSenSoutenanceContext db;
         private void frmAnneeAcademique_Load(object sender, EventArgs e)
         {
-            db = new BdSenSoutenanceContext();
-            dgAnneeAcademique.DataSource = db.anneeAcademiques.ToList(); //CA charge toute les donnee de la base (anneacademique)dans le gredview
+            try
+            {
+                db = new BdSenSoutenanceContext();
+                dgAnneeAcademique.DataSource = db.anneeAcademiques.ToList();
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                Exception inner = ex.InnerException;
+                while (inner != null)
+                {
+                    msg += "\n\n--- Inner Exception ---\n" + inner.Message;
+                    inner = inner.InnerException;
+                }
+                MessageBox.Show(msg, "Erreur de connexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //pour effacer
