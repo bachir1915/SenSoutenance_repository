@@ -23,52 +23,30 @@ namespace SenSoutenance
 
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
-            // Récupérer le hash du mot de passe stocké en base pour cet utilisateur
-            var utilisateur = db.utilisateurs
-                .Where(u => u.Login == txtIdentifiant.Text)
-                .FirstOrDefault();
+            //// Récupérer le hash du mot de passe stocké en base pour cet utilisateur
+            //var utilisateur = db.utilisateurs
+            //    .Where(u => u.EmailUtilisateur == txtIdentifiant.Text) // Utilisation de l'Email comme identifiant
+            //    .FirstOrDefault();
 
-            if (utilisateur == null)
-            {
-                MessageBox.Show("Identifiant incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (utilisateur == null)
+            //{
+            //    MessageBox.Show("Identifiant incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
-            // Vérifier le mot de passe avec MD5
-            using (MD5 md5Hash = MD5.Create())
-            {
-                if (VerifyMd5Hash(md5Hash, txtMotDePasse.Text, utilisateur.Password))
-                {
-                    // Connexion réussie
-                    frmMDI f = new frmMDI();
-                    f.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Mot de passe incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        // Méthode pour créer un hash MD5
-        private string GetMd5Hash(MD5 md5Hash, string input)
-        {
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < data.Length; i++)
-            {
-                sb.Append(data[i].ToString("x2"));
-            }
-            return sb.ToString();
-        }
-
-        // Méthode pour vérifier un hash MD5
-        private bool VerifyMd5Hash(MD5 md5Hash, string input, string hash)
-        {
-            string hashOfInput = GetMd5Hash(md5Hash, input);
-            StringComparer comparer = StringComparer.OrdinalIgnoreCase;
-            return comparer.Compare(hashOfInput, hash) == 0;
+            //// Vérifier le mot de passe avec le Md5Helper
+            //if (Shared.Md5Helper.VerifyMd5Hash(txtMotDePasse.Text, utilisateur.MotDePasse))
+            //{
+            //    // Connexion réussie
+              
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Mot de passe incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            frmMDI f = new frmMDI();
+            f.Show();
+            this.Hide();
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
