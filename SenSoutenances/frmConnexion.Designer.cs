@@ -28,84 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIdentifiant = new System.Windows.Forms.TextBox();
             this.txtMotDePasse = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.Label();
             this.btnSeConnecter = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.lblIdentifiant = new System.Windows.Forms.Label();
+            this.txtIdentifiant = new System.Windows.Forms.TextBox();
+            this.panelMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Identifiant";
-            // 
-            // txtIdentifiant
-            // 
-            this.txtIdentifiant.Location = new System.Drawing.Point(77, 91);
-            this.txtIdentifiant.Name = "txtIdentifiant";
-            this.txtIdentifiant.Size = new System.Drawing.Size(400, 35);
-            this.txtIdentifiant.TabIndex = 1;
             // 
             // txtMotDePasse
             // 
             this.txtMotDePasse.Location = new System.Drawing.Point(77, 205);
             this.txtMotDePasse.Name = "txtMotDePasse";
-            this.txtMotDePasse.Size = new System.Drawing.Size(400, 35);
+            this.txtMotDePasse.Size = new System.Drawing.Size(400, 26);
             this.txtMotDePasse.TabIndex = 3;
             this.txtMotDePasse.UseSystemPasswordChar = true;
             // 
-            // label2
+            // txtPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 151);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 29);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "MOT De Passe";
+            this.txtPassword.AutoSize = true;
+            this.txtPassword.BackColor = System.Drawing.Color.SkyBlue;
+            this.txtPassword.Location = new System.Drawing.Point(8, 155);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(116, 20);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "MOT De Passe";
             // 
             // btnSeConnecter
             // 
-            this.btnSeConnecter.Location = new System.Drawing.Point(291, 314);
+            this.btnSeConnecter.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSeConnecter.Location = new System.Drawing.Point(235, 243);
             this.btnSeConnecter.Name = "btnSeConnecter";
             this.btnSeConnecter.Size = new System.Drawing.Size(173, 59);
             this.btnSeConnecter.TabIndex = 4;
             this.btnSeConnecter.Text = "Se Connecter";
-            this.btnSeConnecter.UseVisualStyleBackColor = true;
+            this.btnSeConnecter.UseVisualStyleBackColor = false;
             this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(82, 314);
+            this.btnQuitter.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnQuitter.Location = new System.Drawing.Point(12, 243);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(173, 59);
+            this.btnQuitter.Size = new System.Drawing.Size(169, 59);
             this.btnQuitter.TabIndex = 5;
             this.btnQuitter.Text = "Quitter";
-            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            // 
+            // panelMain
+            // 
+            this.panelMain.BackColor = System.Drawing.Color.SkyBlue;
+            this.panelMain.Controls.Add(this.lblIdentifiant);
+            this.panelMain.Controls.Add(this.txtIdentifiant);
+            this.panelMain.Controls.Add(this.txtPassword);
+            this.panelMain.Controls.Add(this.btnQuitter);
+            this.panelMain.Controls.Add(this.btnSeConnecter);
+            this.panelMain.Location = new System.Drawing.Point(69, 27);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(418, 349);
+            this.panelMain.TabIndex = 6;
+            // 
+            // lblIdentifiant
+            // 
+            this.lblIdentifiant.AutoSize = true;
+            this.lblIdentifiant.BackColor = System.Drawing.Color.SkyBlue;
+            this.lblIdentifiant.Location = new System.Drawing.Point(4, 45);
+            this.lblIdentifiant.Name = "lblIdentifiant";
+            this.lblIdentifiant.Size = new System.Drawing.Size(80, 20);
+            this.lblIdentifiant.TabIndex = 7;
+            this.lblIdentifiant.Text = "Identifiant";
+            // 
+            // txtIdentifiant
+            // 
+            this.txtIdentifiant.Location = new System.Drawing.Point(8, 78);
+            this.txtIdentifiant.Name = "txtIdentifiant";
+            this.txtIdentifiant.Size = new System.Drawing.Size(400, 26);
+            this.txtIdentifiant.TabIndex = 1;
+          
             // 
             // frmConnexion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(542, 506);
             this.ControlBox = false;
-            this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.btnSeConnecter);
             this.Controls.Add(this.txtMotDePasse);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtIdentifiant);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmConnexion";
             this.Text = "Sen Soutenance :: Connexion";
+            this.Load += new System.EventHandler(this.frmConnexion_Load);
+            this.panelMain.ResumeLayout(false);
+            this.panelMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,12 +132,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIdentifiant;
         private System.Windows.Forms.TextBox txtMotDePasse;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtPassword;
         private System.Windows.Forms.Button btnSeConnecter;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Label lblIdentifiant;
+        private System.Windows.Forms.TextBox txtIdentifiant;
     }
 }
 
