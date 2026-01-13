@@ -1,102 +1,145 @@
-﻿using Microsoft.VisualBasic.Devices;
-using SenSoutenance.Views;
-using SenSoutenance.Views.Parametre;
+﻿using SenSoutenance.Views.Parametre;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SenSoutenance
 {
-    public partial class frmMDI : global::System.Windows.Forms.Form
+    public partial class frmMDI : Form
     {
         public frmMDI()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// methode permettant de fermet tout les from dans le prentMDI
-        /// </summary>
-
-        private void fermer()
+       
+        // Méthode : fermer tous les formulaires enfants MDI
+       
+        private void FermerTousLesForms()
         {
-            Form[] charr = this.MdiChildren;
-
-            //For each child form set the window state to Maximized 
-            foreach (Form chform in charr)
+            foreach (Form f in this.MdiChildren)
             {
-                //chform.WindowState = FormWindowState.Maximized;
-                chform.Close();
+                f.Close();
             }
         }
 
-        private void seDeconecterToolStripMenuItem_Click(object sender, EventArgs e)
+        // =====================================================
+        // Méthode générique : ouvrir un formulaire dans le MDI
+        // =====================================================
+        private void OuvrirForm<T>(string titre) where T : Form, new()
         {
-            frmConnexion f = new frmConnexion();
-            f.Show();
-            this.Close(); //c'est pour fermer la page actuelle
+            // Vérifier si le formulaire est déjà ouvert
+            Form formExistant = this.MdiChildren
+                .FirstOrDefault(f => f is T);
+
+            if (formExistant != null)
+            {
+                formExistant.BringToFront();
+                return;
+            }
+
+            FermerTousLesForms();
+
+            Form form = new T
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+
+            this.Text = $"Sen Soutenance - [{titre}]";
+            form.Show();
         }
 
-        private void qToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        // Chargement du formulaire MDI
+        
+        private void frmMDI_Load(object sender, EventArgs e)
         {
-            Application.Exit(); //c'est pour quitter
+            // Plein écran déjà géré par Designer
+            // Gestion des droits
+
+            if (SessionUtilisateur.Role == "Admin")
+            {
+                securiteToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                securiteToolStripMenuItem.Visible = false;
+            }
         }
 
+        
+        // MENU PARAMÈTRE
+      
         private void anneeAcademiqueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //on appel cette fonction pour fermet le from si on en ouvre un autre
-            fermer();
-
-            //ca permet que ca s'affiche a l'interieur 
-            frmAnneeAcademique f = new frmAnneeAcademique();
-            f.MdiParent = this;
-            f.Show(); //pour afficher le from
-
-            //permet d'utiliser toute l'espace disponible au niveau du container
-            f.WindowState = FormWindowState.Maximized;
+            OuvrirForm<frmAnneeAcademique>("Année Académique");
         }
 
         private void sessionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //on appel cette fonction pour fermet le from si on en ouvre un autre
-            fermer();
-
-            //ca permet que ca s'affiche a l'interieur 
-            frmSession f = new frmSession();
-            f.MdiParent = this;
-            f.Show(); //pour afficher le from
-
-            //permet d'utiliser toute l'espace disponible au niveau du container
-            f.WindowState = FormWindowState.Maximized;
+            OuvrirForm<frmSession>("Session");
         }
 
         private void professeurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //on appel cette fonction pour fermet le from si on en ouvre un autre
-            fermer();
-
-            //ca permet que ca s'affiche a l'interieur 
-            frmProfesseur f = new frmProfesseur();
-            f.MdiParent = this;
-            f.Show(); //pour afficher le from
-
-            //permet d'utiliser toute l'espace disponible au niveau du container
-            f.WindowState = FormWindowState.Maximized;
+            OuvrirForm<frmProfesseur>("Professeur");
         }
 
-        //lorsque le formulaire souvre il prend tout l'ecran
-        private void frmMDI_Load(object sender, EventArgs e)
+        private void candidatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Computer myComputer = new Computer();
-            this.Width = myComputer.Screen.Bounds.Width; //prend la taille de mon ordi
-            this.Height = myComputer.Screen.Bounds.Height;// prend la hauteur de mon ordi
-            this.Location = new Point(0, 0);
+            OuvrirForm<frmCandidat>("Candidat");
+        }
+
+
+       
+        // MENU ACTION
+     
+        private void seDeconnecterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult rep = MessageBox.Show(
+                "Voulez-vous vraiment vous déconnecter ?",
+                "Déconnexion",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (rep == DialogResult.Yes)
+            {
+                new frmConnexion().Show();
+                this.Close();
+            }
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult rep = MessageBox.Show(
+                "Voulez-vous vraiment quitter l'application ?",
+                "Quitter",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (rep == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void utilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FermerTousLesForms();
+
+            frmUtilisateur f = new frmUtilisateur();
+            f.MdiParent = this;
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
+        }
+
+        private void securiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

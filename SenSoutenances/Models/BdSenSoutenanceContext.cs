@@ -29,6 +29,6 @@ namespace SenSoutenance.Models
 
         public DbSet<Candidat> candidat { get; set; }
 
-        public DbSet<Professeur> profsseurs { get; set; }
+        public DbSet<Professeur> professeurs { get; set; }
     }
 }

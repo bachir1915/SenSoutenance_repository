@@ -1,76 +1,100 @@
-﻿using SenSoutenance.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using SenSoutenance.Models;
 
 namespace SenSoutenance.Views.Parametre
 {
-    public partial class frmAnneeAcademique : global::System.Windows.Forms.Form
+    public partial class frmAnneeAcademique : Form
     {
+        private List<AnneeAcademique> annees;
+
         public frmAnneeAcademique()
         {
             InitializeComponent();
         }
 
-        BdSenSoutenanceContext db;
         private void frmAnneeAcademique_Load(object sender, EventArgs e)
         {
-            db = new BdSenSoutenanceContext();
-            dgAnneeAcademique.DataSource = db.anneeAcademiques.ToList(); //CA charge toute les donnee de la base (anneacademique)dans le gredview
+            annees = new List<AnneeAcademique>
+            {
+                new AnneeAcademique { IdAnneeAcademique = 1, LibelleAnneeAcademique = "2023-2024", AnneeAcademiqueVal = 2023 },
+                new AnneeAcademique { IdAnneeAcademique = 2, LibelleAnneeAcademique = "2024-2025", AnneeAcademiqueVal = 2024 }
+            };
+
+            ChargerDonnees();
         }
 
-        //pour effacer
-        public void Effacer()
+        private void ChargerDonnees()
         {
-            txtLibelleAnneeAcademique.Clear();
-            txtAnneeAcademiqueVal.Clear();
-            dgAnneeAcademique.DataSource = db.anneeAcademiques.ToList();
-            txtLibelleAnneeAcademique.Focus();
-
+            dgAnneeAcademique.DataSource = null;
+            dgAnneeAcademique.AutoGenerateColumns = true;
+            dgAnneeAcademique.DataSource = annees;
+            dgAnneeAcademique.ClearSelection();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            AnneeAcademique anneeAcademique = new AnneeAcademique()
+            if (string.IsNullOrWhiteSpace(txtLibelleAnneeAcademique.Text) ||
+                string.IsNullOrWhiteSpace(txtAnneeAcademiqueVal.Text))
             {
+                MessageBox.Show("Veuillez remplir tous les champs.");
+                return;
+            }
+
+            annees.Add(new AnneeAcademique
+            {
+                IdAnneeAcademique = annees.Count + 1,
                 LibelleAnneeAcademique = txtLibelleAnneeAcademique.Text,
-                AnneeAcademiqueVal = int.Parse(txtAnneeAcademiqueVal.Text),
-            };
-            db.anneeAcademiques.Add(anneeAcademique); //ca ajoute au niveau de contexte
-            db.SaveChanges(); //pour s'incroniger
-            Effacer();
-        }
+                AnneeAcademiqueVal = int.Parse(txtAnneeAcademiqueVal.Text)
+            });
 
-        private void btnModifier_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(dgAnneeAcademique.CurrentRow.Cells[0].Value.
-                ToString());
-            AnneeAcademique anneeAcademique = db.anneeAcademiques.Find(id);
-            anneeAcademique.LibelleAnneeAcademique = txtLibelleAnneeAcademique.Text;
-            anneeAcademique.AnneeAcademiqueVal = int.Parse(txtAnneeAcademiqueVal.Text);
-            db.SaveChanges();
-            Effacer();
-        }
-
-        private void btnSupprimer_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(dgAnneeAcademique.CurrentRow.Cells[0].Value.ToString());
-            AnneeAcademique anneeAcademique = db.anneeAcademiques.Find(id);
-            db.anneeAcademiques.Remove(anneeAcademique);
-            db.SaveChanges();
+            ChargerDonnees();
             Effacer();
         }
 
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
-            txtLibelleAnneeAcademique.Text= dgAnneeAcademique.CurrentRow.Cells[1].Value.ToString();
-            txtAnneeAcademiqueVal.Text = dgAnneeAcademique.CurrentRow.Cells[2].Value.ToString();
+            if (dgAnneeAcademique.CurrentRow == null) return;
+
+            txtLibelleAnneeAcademique.Text =
+                dgAnneeAcademique.CurrentRow.Cells["LibelleAnneeAcademique"].Value.ToString();
+
+            txtAnneeAcademiqueVal.Text =
+                dgAnneeAcademique.CurrentRow.Cells["AnneeAcademiqueVal"].Value.ToString();
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            if (dgAnneeAcademique.CurrentRow == null) return;
+
+            int id = (int)dgAnneeAcademique.CurrentRow.Cells["IdAnneeAcademique"].Value;
+
+            var annee = annees.Find(a => a.IdAnneeAcademique == id);
+            if (annee == null) return;
+
+            annee.LibelleAnneeAcademique = txtLibelleAnneeAcademique.Text;
+            annee.AnneeAcademiqueVal = int.Parse(txtAnneeAcademiqueVal.Text);
+
+            ChargerDonnees();
+            Effacer();
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dgAnneeAcademique.CurrentRow == null) return;
+
+            int id = (int)dgAnneeAcademique.CurrentRow.Cells["IdAnneeAcademique"].Value;
+            annees.RemoveAll(a => a.IdAnneeAcademique == id);
+
+            ChargerDonnees();
+            Effacer();
+        }
+
+        private void Effacer()
+        {
+            txtLibelleAnneeAcademique.Clear();
+            txtAnneeAcademiqueVal.Clear();
         }
     }
 }
