@@ -30,9 +30,9 @@ namespace SenSoutenance.Views.Parametre
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtLogin.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
+            if (string.IsNullOrWhiteSpace(txtNom.Text) || string.IsNullOrWhiteSpace(txtLogin.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
-                MessageBox.Show("Veuillez remplir le login et le mot de passe.");
+                MessageBox.Show("Veuillez remplir au moins le nom, l'email et le mot de passe.");
                 return;
             }
 
@@ -40,6 +40,9 @@ namespace SenSoutenance.Views.Parametre
             utilisateurs.Add(new Utilisateur
             {
                 IdUtilisateur = newId,
+                NomUtilisateur = txtNom.Text.Trim(),
+                PrenomUtilisateur = txtPrenom.Text.Trim(),
+                TelUtilisateur = txtTel.Text.Trim(),
                 EmailUtilisateur = txtLogin.Text.Trim(),
                 MotDePasse = SenSoutenance.Shared.Md5Helper.GetMd5Hash(txtPassword.Text.Trim())
             });
@@ -56,8 +59,14 @@ namespace SenSoutenance.Views.Parametre
             var u = utilisateurs.FirstOrDefault(x => x.IdUtilisateur == id);
             if (u != null)
             {
+                u.NomUtilisateur = txtNom.Text.Trim();
+                u.PrenomUtilisateur = txtPrenom.Text.Trim();
+                u.TelUtilisateur = txtTel.Text.Trim();
                 u.EmailUtilisateur = txtLogin.Text.Trim();
-                u.MotDePasse = SenSoutenance.Shared.Md5Helper.GetMd5Hash(txtPassword.Text.Trim());
+                if (!string.IsNullOrWhiteSpace(txtPassword.Text))
+                {
+                    u.MotDePasse = SenSoutenance.Shared.Md5Helper.GetMd5Hash(txtPassword.Text.Trim());
+                }
                 ChargerUtilisateurs();
                 Effacer();
             }
@@ -87,6 +96,9 @@ namespace SenSoutenance.Views.Parametre
             var u = utilisateurs.FirstOrDefault(x => x.IdUtilisateur == id);
             if (u != null)
             {
+                txtNom.Text = u.NomUtilisateur;
+                txtPrenom.Text = u.PrenomUtilisateur;
+                txtTel.Text = u.TelUtilisateur;
                 txtLogin.Text = u.EmailUtilisateur;
                 txtPassword.Text = ""; // On ne remplit pas le mot de passe en clair
             }
@@ -94,8 +106,12 @@ namespace SenSoutenance.Views.Parametre
 
         private void Effacer()
         {
+            txtNom.Clear();
+            txtPrenom.Clear();
+            txtTel.Clear();
             txtLogin.Clear();
             txtPassword.Clear();
+            txtNom.Focus();
         }
     }
 }
