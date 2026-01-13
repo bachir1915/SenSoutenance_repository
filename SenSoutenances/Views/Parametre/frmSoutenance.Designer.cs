@@ -26,7 +26,6 @@ namespace SenSoutenance.Views.Parametre
             this.label5 = new System.Windows.Forms.Label();
             this.txtObservation = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboMemoire = new System.Windows.Forms.ComboBox();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
@@ -125,14 +124,7 @@ namespace SenSoutenance.Views.Parametre
             this.label6.TabIndex = 10;
             this.label6.Text = "Mémoire";
             // 
-            // cboMemoire
-            // 
-            this.cboMemoire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMemoire.FormattingEnabled = true;
-            this.cboMemoire.Location = new System.Drawing.Point(463, 40);
-            this.cboMemoire.Name = "cboMemoire";
-            this.cboMemoire.Size = new System.Drawing.Size(250, 25);
-            this.cboMemoire.TabIndex = 11;
+
             // 
             // dgSoutenance
             // 
@@ -217,7 +209,6 @@ namespace SenSoutenance.Views.Parametre
             this.Controls.Add(this.btnSelectionner);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.dgSoutenance);
-            this.Controls.Add(this.cboMemoire);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtObservation);
             this.Controls.Add(this.label5);
@@ -231,6 +222,7 @@ namespace SenSoutenance.Views.Parametre
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Name = "frmSoutenance";
+            this.ControlBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestion des Soutenances";
             this.Load += new System.EventHandler(this.frmSoutenance_Load);
@@ -250,7 +242,6 @@ namespace SenSoutenance.Views.Parametre
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtObservation;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboMemoire;
         private System.Windows.Forms.DataGridView dgSoutenance;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnModifier;

@@ -42,6 +42,7 @@
             this.departementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.memoireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soutenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chefDepartementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +95,7 @@
             this.anneeAcademiqueToolStripMenuItem,
             this.sessionToolStripMenuItem,
             this.departementToolStripMenuItem,
+            this.chefDepartementToolStripMenuItem,
             this.memoireToolStripMenuItem,
             this.soutenanceToolStripMenuItem});
             this.parametreToolStripMenuItem.Name = "parametreToolStripMenuItem";
@@ -113,6 +115,13 @@
             this.sessionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sessionToolStripMenuItem.Text = "Session";
             this.sessionToolStripMenuItem.Click += new System.EventHandler(this.sessionToolStripMenuItem_Click);
+            // 
+            // chefDepartementToolStripMenuItem
+            // 
+            this.chefDepartementToolStripMenuItem.Name = "chefDepartementToolStripMenuItem";
+            this.chefDepartementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chefDepartementToolStripMenuItem.Text = "Chef Département";
+            this.chefDepartementToolStripMenuItem.Click += new System.EventHandler(this.chefDepartementToolStripMenuItem_Click);
             // 
             // departementToolStripMenuItem
             // 
@@ -197,5 +206,6 @@
         private System.Windows.Forms.ToolStripMenuItem departementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem memoireToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soutenanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chefDepartementToolStripMenuItem;
     }
 }

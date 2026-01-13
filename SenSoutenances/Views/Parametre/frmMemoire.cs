@@ -21,24 +21,13 @@ namespace SenSoutenance.Views.Parametre
 
         private void frmMemoire_Load(object sender, EventArgs e)
         {
-            ChargerData();
+            // Initialisation des listes pour éviter les erreurs de mapping dans le Select
+            annees.Add(new AnneeAcademique { IdAnneeAcademique = 1, LibelleAnneeAcademique = "N/A" });
+            sessions.Add(new Session { IdSession = 1, LibelleSession = "N/A" });
             ChargerMemoires();
         }
 
-        private void ChargerData()
-        {
-            // Simulation
-            annees.Add(new AnneeAcademique { IdAnneeAcademique = 1, LibelleAnneeAcademique = "2024-2025" });
-            sessions.Add(new Session { IdSession = 1, LibelleSession = "Unique" });
 
-            cboAnnee.DataSource = annees;
-            cboAnnee.DisplayMember = "LibelleAnneeAcademique";
-            cboAnnee.ValueMember = "IdAnneeAcademique";
-
-            cboSession.DataSource = sessions;
-            cboSession.DisplayMember = "LibelleSession";
-            cboSession.ValueMember = "IdSession";
-        }
 
         private void ChargerMemoires()
         {
@@ -66,10 +55,10 @@ namespace SenSoutenance.Views.Parametre
             {
                 IdMemoire = newId,
                 SujetMemoire = txtSujet.Text.Trim(),
-                IdAnneeAcademique = (int)cboAnnee.SelectedValue,
-                AnneeAcademique = (AnneeAcademique)cboAnnee.SelectedItem,
-                IdSession = (int)cboSession.SelectedValue,
-                Session = (Session)cboSession.SelectedItem
+                IdAnneeAcademique = 1,
+                AnneeAcademique = annees.First(),
+                IdSession = 1,
+                Session = sessions.First()
             };
 
             memoires.Add(m);
@@ -87,10 +76,10 @@ namespace SenSoutenance.Views.Parametre
             if (m != null)
             {
                 m.SujetMemoire = txtSujet.Text.Trim();
-                m.IdAnneeAcademique = (int)cboAnnee.SelectedValue;
-                m.AnneeAcademique = (AnneeAcademique)cboAnnee.SelectedItem;
-                m.IdSession = (int)cboSession.SelectedValue;
-                m.Session = (Session)cboSession.SelectedItem;
+                m.IdAnneeAcademique = 1;
+                m.AnneeAcademique = annees.First();
+                m.IdSession = 1;
+                m.Session = sessions.First();
                 ChargerMemoires();
                 txtSujet.Clear();
             }
@@ -121,8 +110,6 @@ namespace SenSoutenance.Views.Parametre
             if (m != null)
             {
                 txtSujet.Text = m.SujetMemoire;
-                cboAnnee.SelectedValue = m.IdAnneeAcademique;
-                cboSession.SelectedValue = m.IdSession;
             }
         }
     }

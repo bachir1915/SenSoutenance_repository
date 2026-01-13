@@ -24,7 +24,6 @@ namespace SenSoutenance.Views.Parametre
         
         private void frmSession_Load(object sender, EventArgs e)
         {
-            ChargerAnneeAcademique();
             ChargerSessions();
             Effacer();
         }
@@ -32,20 +31,7 @@ namespace SenSoutenance.Views.Parametre
         
         // Charger ComboBox Année académique (SIMULATION)
       
-        private void ChargerAnneeAcademique()
-        {
-            annees = new List<AnneeAcademique>
-            {
-                new AnneeAcademique { IdAnneeAcademique = 1, LibelleAnneeAcademique = "2023-2024" },
-                new AnneeAcademique { IdAnneeAcademique = 2, LibelleAnneeAcademique = "2024-2025" }
-            };
 
-            cbbAnneeAcademique.DataSource = null;
-            cbbAnneeAcademique.DataSource = annees;
-            cbbAnneeAcademique.DisplayMember = "LibelleAnneeAcademique";
-            cbbAnneeAcademique.ValueMember = "IdAnneeAcademique";
-            cbbAnneeAcademique.SelectedIndex = -1;
-        }
 
         
         // Charger DataGridView Sessions (SIMULATION)
@@ -73,7 +59,6 @@ namespace SenSoutenance.Views.Parametre
         private void Effacer()
         {
             txtSession.Clear();
-            cbbAnneeAcademique.SelectedIndex = -1;
             txtSession.Focus();
         }
 
@@ -90,7 +75,7 @@ namespace SenSoutenance.Views.Parametre
             {
                 IdSession = newId,
                 LibelleSession = txtSession.Text.Trim(),
-                IdAnneeAcademique = (int)cbbAnneeAcademique.SelectedValue
+                IdAnneeAcademique = 1 // Default
             });
 
             ChargerSessions();
@@ -109,7 +94,7 @@ namespace SenSoutenance.Views.Parametre
             if (session == null) return;
 
             session.LibelleSession = txtSession.Text.Trim();
-            session.IdAnneeAcademique = (int)cbbAnneeAcademique.SelectedValue;
+            session.IdAnneeAcademique = 1; // Default
 
             ChargerSessions();
             Effacer();
@@ -146,10 +131,6 @@ namespace SenSoutenance.Views.Parametre
             if (dgSession.CurrentRow == null) return;
 
             txtSession.Text = dgSession.CurrentRow.Cells[1].Value.ToString();
-
-            string libelleAnnee = dgSession.CurrentRow.Cells[2].Value.ToString();
-            cbbAnneeAcademique.SelectedIndex =
-                cbbAnneeAcademique.FindStringExact(libelleAnnee);
         }
 
         
@@ -164,11 +145,7 @@ namespace SenSoutenance.Views.Parametre
                 return false;
             }
 
-            if (cbbAnneeAcademique.SelectedIndex == -1)
-            {
-                MessageBox.Show("Veuillez choisir une année académique.");
-                return false;
-            }
+
 
             return true;
         }

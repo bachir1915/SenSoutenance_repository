@@ -194,6 +194,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmCandidat";
+            this.ControlBox = false;
             this.Text = "Candidat";
             this.Load += new System.EventHandler(this.frmCandidat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCandidat)).EndInit();

@@ -128,6 +128,7 @@ namespace SenSoutenance.Views.Parametre
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Name = "frmDepartement";
+            this.ControlBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestion des Départements";
             this.Load += new System.EventHandler(this.frmDepartement_Load);

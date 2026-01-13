@@ -36,7 +36,6 @@
             this.txtAnneeAcademique = new System.Windows.Forms.Label();
             this.txtSession = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbbAnneeAcademique = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgSession)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,13 +135,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Session";
             // 
-            // cbbAnneeAcademique
-            // 
-            this.cbbAnneeAcademique.FormattingEnabled = true;
-            this.cbbAnneeAcademique.Location = new System.Drawing.Point(249, 177);
-            this.cbbAnneeAcademique.Name = "cbbAnneeAcademique";
-            this.cbbAnneeAcademique.Size = new System.Drawing.Size(320, 28);
-            this.cbbAnneeAcademique.TabIndex = 15;
             // 
             // frmSession
             // 
@@ -151,7 +143,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(972, 590);
             this.ControlBox = false;
-            this.Controls.Add(this.cbbAnneeAcademique);
             this.Controls.Add(this.txtAnneeAcademique);
             this.Controls.Add(this.txtSession);
             this.Controls.Add(this.label1);
@@ -181,6 +172,5 @@
         private System.Windows.Forms.Label txtAnneeAcademique;
         private System.Windows.Forms.TextBox txtSession;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbbAnneeAcademique;
     }
 }

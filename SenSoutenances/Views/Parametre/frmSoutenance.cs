@@ -19,18 +19,12 @@ namespace SenSoutenance.Views.Parametre
 
         private void frmSoutenance_Load(object sender, EventArgs e)
         {
-            ChargerMemoires();
+            // Initialisation de la liste pour simulation
+            memoires.Add(new Memoire { IdMemoire = 1, SujetMemoire = "N/A" });
             ChargerSoutenances();
         }
 
-        private void ChargerMemoires()
-        {
-            // Simulation de données
-            memoires.Add(new Memoire { IdMemoire = 1, SujetMemoire = "Système de gestion de stock" });
-            cboMemoire.DataSource = memoires;
-            cboMemoire.DisplayMember = "SujetMemoire";
-            cboMemoire.ValueMember = "IdMemoire";
-        }
+
 
         private void ChargerSoutenances()
         {
@@ -58,8 +52,8 @@ namespace SenSoutenance.Views.Parametre
                 ResultatSoutenance = txtResultat.Text.Trim(),
                 MentionSoutenance = txtMention.Text.Trim(),
                 ObservationSoutenance = txtObservation.Text.Trim(),
-                IdMemoire = (int)cboMemoire.SelectedValue,
-                Memoire = (Memoire)cboMemoire.SelectedItem
+                IdMemoire = 1,
+                Memoire = memoires.First()
             };
 
             soutenances.Add(s);
@@ -80,8 +74,8 @@ namespace SenSoutenance.Views.Parametre
                 s.ResultatSoutenance = txtResultat.Text.Trim();
                 s.MentionSoutenance = txtMention.Text.Trim();
                 s.ObservationSoutenance = txtObservation.Text.Trim();
-                s.IdMemoire = (int)cboMemoire.SelectedValue;
-                s.Memoire = (Memoire)cboMemoire.SelectedItem;
+                s.IdMemoire = 1;
+                s.Memoire = memoires.First();
                 ChargerSoutenances();
                 Effacer();
             }
@@ -116,7 +110,6 @@ namespace SenSoutenance.Views.Parametre
                 txtResultat.Text = s.ResultatSoutenance;
                 txtMention.Text = s.MentionSoutenance;
                 txtObservation.Text = s.ObservationSoutenance;
-                cboMemoire.SelectedValue = s.IdMemoire;
             }
         }
 
