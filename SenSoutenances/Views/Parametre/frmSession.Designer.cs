@@ -53,7 +53,11 @@
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.BackColor = System.Drawing.Color.Red;
+            this.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupprimer.FlatAppearance.BorderSize = 0;
+            this.btnSupprimer.ForeColor = System.Drawing.Color.White;
+            this.btnSupprimer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSupprimer.Location = new System.Drawing.Point(758, 261);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(151, 29);
@@ -64,7 +68,11 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnModifier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifier.FlatAppearance.BorderSize = 0;
+            this.btnModifier.ForeColor = System.Drawing.Color.White;
+            this.btnModifier.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnModifier.Location = new System.Drawing.Point(589, 261);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(151, 29);
@@ -75,7 +83,11 @@
             // 
             // btnAjouter
             // 
-            this.btnAjouter.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjouter.FlatAppearance.BorderSize = 0;
+            this.btnAjouter.ForeColor = System.Drawing.Color.White;
+            this.btnAjouter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAjouter.Location = new System.Drawing.Point(249, 261);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(151, 29);
@@ -86,7 +98,11 @@
             // 
             // btnSelectionner
             // 
-            this.btnSelectionner.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSelectionner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectionner.FlatAppearance.BorderSize = 0;
+            this.btnSelectionner.ForeColor = System.Drawing.Color.White;
+            this.btnSelectionner.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSelectionner.Location = new System.Drawing.Point(418, 261);
             this.btnSelectionner.Name = "btnSelectionner";
             this.btnSelectionner.Size = new System.Drawing.Size(151, 29);
@@ -132,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(972, 590);
             this.ControlBox = false;
             this.Controls.Add(this.cbbAnneeAcademique);
@@ -144,7 +160,7 @@
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.dgSession);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmSession";
             this.Text = "Session";

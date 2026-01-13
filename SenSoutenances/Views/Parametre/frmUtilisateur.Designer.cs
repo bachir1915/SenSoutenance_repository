@@ -98,13 +98,13 @@
             this.tabUtilisateur.Multiline = true;
             this.tabUtilisateur.Name = "tabUtilisateur";
             this.tabUtilisateur.SelectedIndex = 0;
-            this.tabUtilisateur.Size = new System.Drawing.Size(776, 450);
+            this.tabUtilisateur.Size = new System.Drawing.Size(730, 366);
             this.tabUtilisateur.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabUtilisateur.TabIndex = 0;
             // 
             // tabChefDepartement
             // 
-            this.tabChefDepartement.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabChefDepartement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.tabChefDepartement.Controls.Add(this.btnSelectionnerChef);
             this.tabChefDepartement.Controls.Add(this.btnModifierChef);
             this.tabChefDepartement.Controls.Add(this.btnSupprimerChef);
@@ -118,22 +118,24 @@
             this.tabChefDepartement.Controls.Add(this.txtChefNom);
             this.tabChefDepartement.Controls.Add(this.label13);
             this.tabChefDepartement.Controls.Add(this.label15);
-            this.tabChefDepartement.Location = new System.Drawing.Point(4, 22);
+            this.tabChefDepartement.Location = new System.Drawing.Point(4, 30);
             this.tabChefDepartement.Name = "tabChefDepartement";
             this.tabChefDepartement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChefDepartement.Size = new System.Drawing.Size(768, 424);
+            this.tabChefDepartement.Size = new System.Drawing.Size(722, 332);
             this.tabChefDepartement.TabIndex = 0;
             this.tabChefDepartement.Text = "Chef Département";
             this.tabChefDepartement.Click += new System.EventHandler(this.tabChefDepartement_Click);
             // 
             // btnSelectionnerChef
             // 
-            this.btnSelectionnerChef.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSelectionnerChef.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnSelectionnerChef.FlatAppearance.BorderSize = 0;
             this.btnSelectionnerChef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectionnerChef.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSelectionnerChef.ForeColor = System.Drawing.Color.White;
             this.btnSelectionnerChef.Location = new System.Drawing.Point(91, 255);
             this.btnSelectionnerChef.Name = "btnSelectionnerChef";
-            this.btnSelectionnerChef.Size = new System.Drawing.Size(74, 34);
+            this.btnSelectionnerChef.Size = new System.Drawing.Size(84, 34);
             this.btnSelectionnerChef.TabIndex = 52;
             this.btnSelectionnerChef.Text = "Selectionner";
             this.btnSelectionnerChef.UseVisualStyleBackColor = false;
@@ -141,10 +143,12 @@
             // 
             // btnModifierChef
             // 
-            this.btnModifierChef.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnModifierChef.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.btnModifierChef.FlatAppearance.BorderSize = 0;
             this.btnModifierChef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifierChef.Location = new System.Drawing.Point(171, 255);
+            this.btnModifierChef.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnModifierChef.ForeColor = System.Drawing.Color.White;
+            this.btnModifierChef.Location = new System.Drawing.Point(181, 255);
             this.btnModifierChef.Name = "btnModifierChef";
             this.btnModifierChef.Size = new System.Drawing.Size(74, 34);
             this.btnModifierChef.TabIndex = 51;
@@ -154,10 +158,12 @@
             // 
             // btnSupprimerChef
             // 
-            this.btnSupprimerChef.BackColor = System.Drawing.Color.Red;
+            this.btnSupprimerChef.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnSupprimerChef.FlatAppearance.BorderSize = 0;
             this.btnSupprimerChef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupprimerChef.Location = new System.Drawing.Point(251, 255);
+            this.btnSupprimerChef.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSupprimerChef.ForeColor = System.Drawing.Color.White;
+            this.btnSupprimerChef.Location = new System.Drawing.Point(261, 255);
             this.btnSupprimerChef.Name = "btnSupprimerChef";
             this.btnSupprimerChef.Size = new System.Drawing.Size(82, 34);
             this.btnSupprimerChef.TabIndex = 50;
@@ -167,9 +173,11 @@
             // 
             // btnAjouterChef
             // 
-            this.btnAjouterChef.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnAjouterChef.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnAjouterChef.FlatAppearance.BorderSize = 0;
             this.btnAjouterChef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjouterChef.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAjouterChef.ForeColor = System.Drawing.Color.White;
             this.btnAjouterChef.Location = new System.Drawing.Point(8, 255);
             this.btnAjouterChef.Name = "btnAjouterChef";
             this.btnAjouterChef.Size = new System.Drawing.Size(77, 34);
@@ -185,6 +193,7 @@
             this.dgChefDepartement.Location = new System.Drawing.Point(361, 0);
             this.dgChefDepartement.Name = "dgChefDepartement";
             this.dgChefDepartement.ReadOnly = true;
+            this.dgChefDepartement.RowHeadersWidth = 51;
             this.dgChefDepartement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgChefDepartement.Size = new System.Drawing.Size(407, 289);
             this.dgChefDepartement.TabIndex = 48;
@@ -193,7 +202,7 @@
             // 
             this.txtChefEmail.Location = new System.Drawing.Point(81, 197);
             this.txtChefEmail.Name = "txtChefEmail";
-            this.txtChefEmail.Size = new System.Drawing.Size(252, 20);
+            this.txtChefEmail.Size = new System.Drawing.Size(252, 29);
             this.txtChefEmail.TabIndex = 47;
             // 
             // label11
@@ -201,7 +210,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(8, 204);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(32, 13);
+            this.label11.Size = new System.Drawing.Size(51, 23);
             this.label11.TabIndex = 46;
             this.label11.Text = "Email";
             // 
@@ -209,7 +218,7 @@
             // 
             this.txtChefTelephone.Location = new System.Drawing.Point(81, 132);
             this.txtChefTelephone.Name = "txtChefTelephone";
-            this.txtChefTelephone.Size = new System.Drawing.Size(252, 20);
+            this.txtChefTelephone.Size = new System.Drawing.Size(252, 29);
             this.txtChefTelephone.TabIndex = 45;
             // 
             // label12
@@ -217,7 +226,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(8, 139);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.Size = new System.Drawing.Size(88, 23);
             this.label12.TabIndex = 44;
             this.label12.Text = "Téléphone";
             // 
@@ -225,7 +234,7 @@
             // 
             this.txtChefPrenom.Location = new System.Drawing.Point(81, 78);
             this.txtChefPrenom.Name = "txtChefPrenom";
-            this.txtChefPrenom.Size = new System.Drawing.Size(252, 20);
+            this.txtChefPrenom.Size = new System.Drawing.Size(252, 29);
             this.txtChefPrenom.TabIndex = 42;
             this.txtChefPrenom.TextChanged += new System.EventHandler(this.txtChefPrenom_TextChanged);
             // 
@@ -233,7 +242,7 @@
             // 
             this.txtChefNom.Location = new System.Drawing.Point(81, 28);
             this.txtChefNom.Name = "txtChefNom";
-            this.txtChefNom.Size = new System.Drawing.Size(252, 20);
+            this.txtChefNom.Size = new System.Drawing.Size(252, 29);
             this.txtChefNom.TabIndex = 41;
             // 
             // label13
@@ -241,7 +250,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(8, 85);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.Size = new System.Drawing.Size(75, 23);
             this.label13.TabIndex = 40;
             this.label13.Text = "Prénom ";
             // 
@@ -250,13 +259,13 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(8, 35);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 13);
+            this.label15.Size = new System.Drawing.Size(53, 23);
             this.label15.TabIndex = 38;
             this.label15.Text = "Nom ";
             // 
             // tabProfesseur
             // 
-            this.tabProfesseur.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabProfesseur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.tabProfesseur.Controls.Add(this.btnProfSelectionner);
             this.tabProfesseur.Controls.Add(this.btnProfModifier);
             this.tabProfesseur.Controls.Add(this.btnProfSupprimer);
@@ -272,21 +281,23 @@
             this.tabProfesseur.Controls.Add(this.label8);
             this.tabProfesseur.Controls.Add(this.label9);
             this.tabProfesseur.Controls.Add(this.label10);
-            this.tabProfesseur.Location = new System.Drawing.Point(4, 22);
+            this.tabProfesseur.Location = new System.Drawing.Point(4, 30);
             this.tabProfesseur.Name = "tabProfesseur";
             this.tabProfesseur.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfesseur.Size = new System.Drawing.Size(768, 424);
+            this.tabProfesseur.Size = new System.Drawing.Size(768, 416);
             this.tabProfesseur.TabIndex = 1;
             this.tabProfesseur.Text = "Professeur";
             // 
             // btnProfSelectionner
             // 
-            this.btnProfSelectionner.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnProfSelectionner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnProfSelectionner.FlatAppearance.BorderSize = 0;
             this.btnProfSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfSelectionner.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnProfSelectionner.ForeColor = System.Drawing.Color.White;
             this.btnProfSelectionner.Location = new System.Drawing.Point(95, 291);
             this.btnProfSelectionner.Name = "btnProfSelectionner";
-            this.btnProfSelectionner.Size = new System.Drawing.Size(77, 34);
+            this.btnProfSelectionner.Size = new System.Drawing.Size(87, 34);
             this.btnProfSelectionner.TabIndex = 37;
             this.btnProfSelectionner.Text = "Selectionner";
             this.btnProfSelectionner.UseVisualStyleBackColor = false;
@@ -294,9 +305,11 @@
             // 
             // btnProfModifier
             // 
-            this.btnProfModifier.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnProfModifier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.btnProfModifier.FlatAppearance.BorderSize = 0;
             this.btnProfModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfModifier.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnProfModifier.ForeColor = System.Drawing.Color.White;
             this.btnProfModifier.Location = new System.Drawing.Point(187, 291);
             this.btnProfModifier.Name = "btnProfModifier";
             this.btnProfModifier.Size = new System.Drawing.Size(72, 34);
@@ -307,10 +320,12 @@
             // 
             // btnProfSupprimer
             // 
-            this.btnProfSupprimer.BackColor = System.Drawing.Color.Red;
+            this.btnProfSupprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnProfSupprimer.FlatAppearance.BorderSize = 0;
             this.btnProfSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfSupprimer.Location = new System.Drawing.Point(281, 291);
+            this.btnProfSupprimer.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnProfSupprimer.ForeColor = System.Drawing.Color.White;
+            this.btnProfSupprimer.Location = new System.Drawing.Point(265, 291);
             this.btnProfSupprimer.Name = "btnProfSupprimer";
             this.btnProfSupprimer.Size = new System.Drawing.Size(72, 34);
             this.btnProfSupprimer.TabIndex = 35;
@@ -320,9 +335,11 @@
             // 
             // btnProfAjouter
             // 
-            this.btnProfAjouter.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnProfAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnProfAjouter.FlatAppearance.BorderSize = 0;
             this.btnProfAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfAjouter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnProfAjouter.ForeColor = System.Drawing.Color.White;
             this.btnProfAjouter.Location = new System.Drawing.Point(8, 291);
             this.btnProfAjouter.Name = "btnProfAjouter";
             this.btnProfAjouter.Size = new System.Drawing.Size(72, 34);
@@ -338,6 +355,7 @@
             this.dgProfesseur.Location = new System.Drawing.Point(399, 3);
             this.dgProfesseur.Name = "dgProfesseur";
             this.dgProfesseur.ReadOnly = true;
+            this.dgProfesseur.RowHeadersWidth = 51;
             this.dgProfesseur.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProfesseur.Size = new System.Drawing.Size(369, 322);
             this.dgProfesseur.TabIndex = 24;
@@ -346,7 +364,7 @@
             // 
             this.txtProfEmail.Location = new System.Drawing.Point(150, 235);
             this.txtProfEmail.Name = "txtProfEmail";
-            this.txtProfEmail.Size = new System.Drawing.Size(203, 20);
+            this.txtProfEmail.Size = new System.Drawing.Size(203, 29);
             this.txtProfEmail.TabIndex = 23;
             // 
             // label6
@@ -354,7 +372,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(8, 242);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.Size = new System.Drawing.Size(51, 23);
             this.label6.TabIndex = 22;
             this.label6.Text = "Email";
             // 
@@ -362,7 +380,7 @@
             // 
             this.txtProfTelephone.Location = new System.Drawing.Point(150, 178);
             this.txtProfTelephone.Name = "txtProfTelephone";
-            this.txtProfTelephone.Size = new System.Drawing.Size(203, 20);
+            this.txtProfTelephone.Size = new System.Drawing.Size(203, 29);
             this.txtProfTelephone.TabIndex = 21;
             // 
             // label7
@@ -370,7 +388,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(8, 185);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.Size = new System.Drawing.Size(88, 23);
             this.label7.TabIndex = 20;
             this.label7.Text = "Téléphone";
             // 
@@ -378,21 +396,21 @@
             // 
             this.txtProfSpecialite.Location = new System.Drawing.Point(150, 129);
             this.txtProfSpecialite.Name = "txtProfSpecialite";
-            this.txtProfSpecialite.Size = new System.Drawing.Size(203, 20);
+            this.txtProfSpecialite.Size = new System.Drawing.Size(203, 29);
             this.txtProfSpecialite.TabIndex = 19;
             // 
             // txtProfPrenom
             // 
             this.txtProfPrenom.Location = new System.Drawing.Point(150, 81);
             this.txtProfPrenom.Name = "txtProfPrenom";
-            this.txtProfPrenom.Size = new System.Drawing.Size(203, 20);
+            this.txtProfPrenom.Size = new System.Drawing.Size(203, 29);
             this.txtProfPrenom.TabIndex = 18;
             // 
             // txtProfNom
             // 
             this.txtProfNom.Location = new System.Drawing.Point(150, 33);
             this.txtProfNom.Name = "txtProfNom";
-            this.txtProfNom.Size = new System.Drawing.Size(203, 20);
+            this.txtProfNom.Size = new System.Drawing.Size(203, 29);
             this.txtProfNom.TabIndex = 17;
             // 
             // label8
@@ -400,7 +418,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(8, 88);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 13);
+            this.label8.Size = new System.Drawing.Size(184, 23);
             this.label8.TabIndex = 16;
             this.label8.Text = "Prénom du professeur ";
             // 
@@ -409,7 +427,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(8, 136);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 13);
+            this.label9.Size = new System.Drawing.Size(92, 23);
             this.label9.TabIndex = 15;
             this.label9.Text = " Spécialité ";
             // 
@@ -418,7 +436,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(8, 40);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 13);
+            this.label10.Size = new System.Drawing.Size(157, 23);
             this.label10.TabIndex = 14;
             this.label10.Text = "Nom du professeur";
             // 
@@ -426,10 +444,10 @@
             // 
             this.tabCandidat.Controls.Add(this.panelCandidatGrid);
             this.tabCandidat.Controls.Add(this.panelCandidatForm);
-            this.tabCandidat.Location = new System.Drawing.Point(4, 22);
+            this.tabCandidat.Location = new System.Drawing.Point(4, 30);
             this.tabCandidat.Name = "tabCandidat";
             this.tabCandidat.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCandidat.Size = new System.Drawing.Size(768, 424);
+            this.tabCandidat.Size = new System.Drawing.Size(768, 416);
             this.tabCandidat.TabIndex = 2;
             this.tabCandidat.Text = "Candidat";
             this.tabCandidat.UseVisualStyleBackColor = true;
@@ -440,7 +458,7 @@
             this.panelCandidatGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCandidatGrid.Location = new System.Drawing.Point(388, 3);
             this.panelCandidatGrid.Name = "panelCandidatGrid";
-            this.panelCandidatGrid.Size = new System.Drawing.Size(377, 418);
+            this.panelCandidatGrid.Size = new System.Drawing.Size(377, 410);
             this.panelCandidatGrid.TabIndex = 1;
             // 
             // dgCandidat
@@ -451,14 +469,15 @@
             this.dgCandidat.Location = new System.Drawing.Point(0, 0);
             this.dgCandidat.Name = "dgCandidat";
             this.dgCandidat.ReadOnly = true;
+            this.dgCandidat.RowHeadersWidth = 51;
             this.dgCandidat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgCandidat.Size = new System.Drawing.Size(377, 418);
+            this.dgCandidat.Size = new System.Drawing.Size(377, 410);
             this.dgCandidat.TabIndex = 0;
             this.dgCandidat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCandidat_CellContentClick);
             // 
             // panelCandidatForm
             // 
-            this.panelCandidatForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelCandidatForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.panelCandidatForm.Controls.Add(this.txtMatriculeCandidat);
             this.panelCandidatForm.Controls.Add(this.label5);
             this.panelCandidatForm.Controls.Add(this.btnSelectionnerCandidat);
@@ -476,14 +495,14 @@
             this.panelCandidatForm.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelCandidatForm.Location = new System.Drawing.Point(3, 3);
             this.panelCandidatForm.Name = "panelCandidatForm";
-            this.panelCandidatForm.Size = new System.Drawing.Size(385, 418);
+            this.panelCandidatForm.Size = new System.Drawing.Size(385, 410);
             this.panelCandidatForm.TabIndex = 0;
             // 
             // txtMatriculeCandidat
             // 
             this.txtMatriculeCandidat.Location = new System.Drawing.Point(88, 232);
             this.txtMatriculeCandidat.Name = "txtMatriculeCandidat";
-            this.txtMatriculeCandidat.Size = new System.Drawing.Size(233, 20);
+            this.txtMatriculeCandidat.Size = new System.Drawing.Size(233, 29);
             this.txtMatriculeCandidat.TabIndex = 35;
             // 
             // label5
@@ -491,18 +510,20 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 239);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.Size = new System.Drawing.Size(81, 23);
             this.label5.TabIndex = 34;
             this.label5.Text = "Matricule";
             // 
             // btnSelectionnerCandidat
             // 
-            this.btnSelectionnerCandidat.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSelectionnerCandidat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnSelectionnerCandidat.FlatAppearance.BorderSize = 0;
             this.btnSelectionnerCandidat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectionnerCandidat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSelectionnerCandidat.ForeColor = System.Drawing.Color.White;
             this.btnSelectionnerCandidat.Location = new System.Drawing.Point(88, 268);
             this.btnSelectionnerCandidat.Name = "btnSelectionnerCandidat";
-            this.btnSelectionnerCandidat.Size = new System.Drawing.Size(77, 34);
+            this.btnSelectionnerCandidat.Size = new System.Drawing.Size(87, 34);
             this.btnSelectionnerCandidat.TabIndex = 33;
             this.btnSelectionnerCandidat.Text = "Selectionner";
             this.btnSelectionnerCandidat.UseVisualStyleBackColor = false;
@@ -510,10 +531,12 @@
             // 
             // btnModifierCandidat
             // 
-            this.btnModifierCandidat.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnModifierCandidat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.btnModifierCandidat.FlatAppearance.BorderSize = 0;
             this.btnModifierCandidat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifierCandidat.Location = new System.Drawing.Point(171, 268);
+            this.btnModifierCandidat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnModifierCandidat.ForeColor = System.Drawing.Color.White;
+            this.btnModifierCandidat.Location = new System.Drawing.Point(181, 268);
             this.btnModifierCandidat.Name = "btnModifierCandidat";
             this.btnModifierCandidat.Size = new System.Drawing.Size(72, 34);
             this.btnModifierCandidat.TabIndex = 32;
@@ -523,10 +546,12 @@
             // 
             // btnSupprimerCandidat
             // 
-            this.btnSupprimerCandidat.BackColor = System.Drawing.Color.Red;
+            this.btnSupprimerCandidat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnSupprimerCandidat.FlatAppearance.BorderSize = 0;
             this.btnSupprimerCandidat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupprimerCandidat.Location = new System.Drawing.Point(249, 268);
+            this.btnSupprimerCandidat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSupprimerCandidat.ForeColor = System.Drawing.Color.White;
+            this.btnSupprimerCandidat.Location = new System.Drawing.Point(259, 268);
             this.btnSupprimerCandidat.Name = "btnSupprimerCandidat";
             this.btnSupprimerCandidat.Size = new System.Drawing.Size(72, 34);
             this.btnSupprimerCandidat.TabIndex = 31;
@@ -536,9 +561,11 @@
             // 
             // btnAjouterCandidat
             // 
-            this.btnAjouterCandidat.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnAjouterCandidat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnAjouterCandidat.FlatAppearance.BorderSize = 0;
             this.btnAjouterCandidat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjouterCandidat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAjouterCandidat.ForeColor = System.Drawing.Color.White;
             this.btnAjouterCandidat.Location = new System.Drawing.Point(15, 268);
             this.btnAjouterCandidat.Name = "btnAjouterCandidat";
             this.btnAjouterCandidat.Size = new System.Drawing.Size(67, 34);
@@ -551,7 +578,7 @@
             // 
             this.txtEmailCandidat.Location = new System.Drawing.Point(88, 185);
             this.txtEmailCandidat.Name = "txtEmailCandidat";
-            this.txtEmailCandidat.Size = new System.Drawing.Size(233, 20);
+            this.txtEmailCandidat.Size = new System.Drawing.Size(233, 29);
             this.txtEmailCandidat.TabIndex = 29;
             // 
             // label4
@@ -559,7 +586,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 192);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.Size = new System.Drawing.Size(51, 23);
             this.label4.TabIndex = 28;
             this.label4.Text = "Email";
             // 
@@ -567,21 +594,21 @@
             // 
             this.txtTelephoneCandidat.Location = new System.Drawing.Point(88, 137);
             this.txtTelephoneCandidat.Name = "txtTelephoneCandidat";
-            this.txtTelephoneCandidat.Size = new System.Drawing.Size(233, 20);
+            this.txtTelephoneCandidat.Size = new System.Drawing.Size(233, 29);
             this.txtTelephoneCandidat.TabIndex = 27;
             // 
             // txtPrenomCandidat
             // 
             this.txtPrenomCandidat.Location = new System.Drawing.Point(88, 80);
             this.txtPrenomCandidat.Name = "txtPrenomCandidat";
-            this.txtPrenomCandidat.Size = new System.Drawing.Size(233, 20);
+            this.txtPrenomCandidat.Size = new System.Drawing.Size(233, 29);
             this.txtPrenomCandidat.TabIndex = 26;
             // 
             // txtNomCandidat
             // 
             this.txtNomCandidat.Location = new System.Drawing.Point(88, 25);
             this.txtNomCandidat.Name = "txtNomCandidat";
-            this.txtNomCandidat.Size = new System.Drawing.Size(233, 20);
+            this.txtNomCandidat.Size = new System.Drawing.Size(233, 29);
             this.txtNomCandidat.TabIndex = 25;
             // 
             // label3
@@ -589,7 +616,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.Size = new System.Drawing.Size(70, 23);
             this.label3.TabIndex = 24;
             this.label3.Text = "Prénom";
             // 
@@ -598,7 +625,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(88, 23);
             this.label2.TabIndex = 23;
             this.label2.Text = "Téléphone";
             // 
@@ -607,16 +634,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(48, 23);
             this.label1.TabIndex = 22;
             this.label1.Text = "Nom";
             // 
             // frmUtilisateur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.ClientSize = new System.Drawing.Size(730, 366);
             this.Controls.Add(this.tabUtilisateur);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Name = "frmUtilisateur";
             this.Text = "frmUtilisateur";
             this.Load += new System.EventHandler(this.frmUtilisateur_Load);

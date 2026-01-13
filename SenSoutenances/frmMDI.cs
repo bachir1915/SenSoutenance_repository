@@ -92,6 +92,21 @@ namespace SenSoutenance
             OuvrirForm<frmCandidat>("Candidat");
         }
 
+        private void departementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OuvrirForm<frmDepartement>("Département");
+        }
+
+        private void memoireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OuvrirForm<frmMemoire>("Mémoire");
+        }
+
+        private void soutenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OuvrirForm<frmSoutenance>("Soutenance");
+        }
+
 
        
         // MENU ACTION

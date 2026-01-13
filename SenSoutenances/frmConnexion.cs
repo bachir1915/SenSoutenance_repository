@@ -53,6 +53,11 @@ namespace SenSoutenance
         {
             Application.Exit();
         }
+
+        private void frmConnexion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

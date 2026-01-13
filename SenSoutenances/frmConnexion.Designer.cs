@@ -40,86 +40,104 @@
             // 
             // txtMotDePasse
             // 
-            this.txtMotDePasse.Location = new System.Drawing.Point(77, 205);
+            this.txtMotDePasse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMotDePasse.Location = new System.Drawing.Point(29, 146);
             this.txtMotDePasse.Name = "txtMotDePasse";
-            this.txtMotDePasse.Size = new System.Drawing.Size(400, 26);
+            this.txtMotDePasse.Size = new System.Drawing.Size(360, 29);
             this.txtMotDePasse.TabIndex = 3;
             this.txtMotDePasse.UseSystemPasswordChar = true;
             // 
             // txtPassword
             // 
             this.txtPassword.AutoSize = true;
-            this.txtPassword.BackColor = System.Drawing.Color.SkyBlue;
-            this.txtPassword.Location = new System.Drawing.Point(8, 155);
+            this.txtPassword.BackColor = System.Drawing.Color.Transparent;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPassword.Location = new System.Drawing.Point(25, 124);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(116, 20);
+            this.txtPassword.Size = new System.Drawing.Size(91, 19);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "MOT De Passe";
+            this.txtPassword.Text = "🔒 Mot de passe";
             // 
             // btnSeConnecter
             // 
-            this.btnSeConnecter.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSeConnecter.Location = new System.Drawing.Point(235, 243);
+            this.btnSeConnecter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnSeConnecter.FlatAppearance.BorderSize = 0;
+            this.btnSeConnecter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeConnecter.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeConnecter.ForeColor = System.Drawing.Color.White;
+            this.btnSeConnecter.Location = new System.Drawing.Point(29, 210);
             this.btnSeConnecter.Name = "btnSeConnecter";
-            this.btnSeConnecter.Size = new System.Drawing.Size(173, 59);
+            this.btnSeConnecter.Size = new System.Drawing.Size(360, 45);
             this.btnSeConnecter.TabIndex = 4;
             this.btnSeConnecter.Text = "Se Connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = false;
+            this.btnSeConnecter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // btnQuitter
             // 
-            this.btnQuitter.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnQuitter.Location = new System.Drawing.Point(12, 243);
+            this.btnQuitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnQuitter.FlatAppearance.BorderSize = 0;
+            this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitter.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitter.ForeColor = System.Drawing.Color.White;
+            this.btnQuitter.Location = new System.Drawing.Point(29, 270);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(169, 59);
+            this.btnQuitter.Size = new System.Drawing.Size(360, 45);
             this.btnQuitter.TabIndex = 5;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
+            this.btnQuitter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
             // panelMain
             // 
-            this.panelMain.BackColor = System.Drawing.Color.SkyBlue;
+            this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.Controls.Add(this.lblIdentifiant);
             this.panelMain.Controls.Add(this.txtIdentifiant);
             this.panelMain.Controls.Add(this.txtPassword);
             this.panelMain.Controls.Add(this.btnQuitter);
             this.panelMain.Controls.Add(this.btnSeConnecter);
-            this.panelMain.Location = new System.Drawing.Point(69, 27);
+            this.panelMain.Controls.Add(this.txtMotDePasse);
+            this.panelMain.Location = new System.Drawing.Point(62, 50);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(418, 349);
+            this.panelMain.Size = new System.Drawing.Size(418, 350);
             this.panelMain.TabIndex = 6;
             // 
             // lblIdentifiant
             // 
             this.lblIdentifiant.AutoSize = true;
-            this.lblIdentifiant.BackColor = System.Drawing.Color.SkyBlue;
-            this.lblIdentifiant.Location = new System.Drawing.Point(4, 45);
+            this.lblIdentifiant.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdentifiant.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdentifiant.ForeColor = System.Drawing.Color.DimGray;
+            this.lblIdentifiant.Location = new System.Drawing.Point(25, 45);
             this.lblIdentifiant.Name = "lblIdentifiant";
-            this.lblIdentifiant.Size = new System.Drawing.Size(80, 20);
+            this.lblIdentifiant.Size = new System.Drawing.Size(71, 19);
             this.lblIdentifiant.TabIndex = 7;
-            this.lblIdentifiant.Text = "Identifiant";
+            this.lblIdentifiant.Text = "👤 Identifiant";
             // 
             // txtIdentifiant
             // 
-            this.txtIdentifiant.Location = new System.Drawing.Point(8, 78);
+            this.txtIdentifiant.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentifiant.Location = new System.Drawing.Point(29, 67);
             this.txtIdentifiant.Name = "txtIdentifiant";
-            this.txtIdentifiant.Size = new System.Drawing.Size(400, 26);
+            this.txtIdentifiant.Size = new System.Drawing.Size(360, 29);
             this.txtIdentifiant.TabIndex = 1;
           
             // 
             // frmConnexion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(542, 506);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.ClientSize = new System.Drawing.Size(542, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.txtMotDePasse);
             this.Controls.Add(this.panelMain);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "frmConnexion";
             this.Text = "Sen Soutenance :: Connexion";
             this.Load += new System.EventHandler(this.frmConnexion_Load);

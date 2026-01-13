@@ -39,6 +39,9 @@
             this.sessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.securiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.memoireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soutenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +92,10 @@
             // 
             this.parametreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.anneeAcademiqueToolStripMenuItem,
-            this.sessionToolStripMenuItem});
+            this.sessionToolStripMenuItem,
+            this.departementToolStripMenuItem,
+            this.memoireToolStripMenuItem,
+            this.soutenanceToolStripMenuItem});
             this.parametreToolStripMenuItem.Name = "parametreToolStripMenuItem";
             this.parametreToolStripMenuItem.Size = new System.Drawing.Size(73, 19);
             this.parametreToolStripMenuItem.Text = "Parametre";
@@ -107,6 +113,27 @@
             this.sessionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sessionToolStripMenuItem.Text = "Session";
             this.sessionToolStripMenuItem.Click += new System.EventHandler(this.sessionToolStripMenuItem_Click);
+            // 
+            // departementToolStripMenuItem
+            // 
+            this.departementToolStripMenuItem.Name = "departementToolStripMenuItem";
+            this.departementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.departementToolStripMenuItem.Text = "Departement";
+            this.departementToolStripMenuItem.Click += new System.EventHandler(this.departementToolStripMenuItem_Click);
+            // 
+            // memoireToolStripMenuItem
+            // 
+            this.memoireToolStripMenuItem.Name = "memoireToolStripMenuItem";
+            this.memoireToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.memoireToolStripMenuItem.Text = "Memoire";
+            this.memoireToolStripMenuItem.Click += new System.EventHandler(this.memoireToolStripMenuItem_Click);
+            // 
+            // soutenanceToolStripMenuItem
+            // 
+            this.soutenanceToolStripMenuItem.Name = "soutenanceToolStripMenuItem";
+            this.soutenanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.soutenanceToolStripMenuItem.Text = "Soutenance";
+            this.soutenanceToolStripMenuItem.Click += new System.EventHandler(this.soutenanceToolStripMenuItem_Click);
             // 
             // securiteToolStripMenuItem
             // 
@@ -134,17 +161,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(746, 522);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmMDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sen Soutenance ";
+            this.Text = "Sen Soutenance";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMDI_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -167,5 +194,8 @@
         private System.Windows.Forms.ToolStripMenuItem accueilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem securiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem utilisateurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem departementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem memoireToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem soutenanceToolStripMenuItem;
     }
 }

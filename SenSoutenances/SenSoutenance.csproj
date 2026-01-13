@@ -129,6 +129,7 @@
     <Compile Include="Models\Candidat.cs" />
     <Compile Include="Models\ChefDepartement.cs" />
     <Compile Include="Models\Departement.cs" />
+    <Compile Include="Models\Jury.cs" />
     <Compile Include="Models\ListItems.cs" />
     <Compile Include="Models\Memoire.cs" />
     <Compile Include="Models\Professeur.cs" />
@@ -138,12 +139,38 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Crypted.cs" />
+    <Compile Include="Shared\StyleHelper.cs" />
     <Compile Include="Shared\FileList.cs" />
+    <Compile Include="SessionUtilisateur.cs" />
     <Compile Include="Views\Parametre\frmAnneeAcademique.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Parametre\frmAnneeAcademique.Designer.cs">
       <DependentUpon>frmAnneeAcademique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Parametre\frmDepartement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmDepartement.Designer.cs">
+      <DependentUpon>frmDepartement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Parametre\frmMemoire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmMemoire.Designer.cs">
+      <DependentUpon>frmMemoire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Parametre\frmSoutenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmSoutenance.Designer.cs">
+      <DependentUpon>frmSoutenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Parametre\frmCandidat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmCandidat.Designer.cs">
+      <DependentUpon>frmCandidat.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Parametre\frmProfesseur.cs">
       <SubType>Form</SubType>
@@ -156,6 +183,12 @@
     </Compile>
     <Compile Include="Views\Parametre\frmSession.Designer.cs">
       <DependentUpon>frmSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Parametre\frmUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmUtilisateur.Designer.cs">
+      <DependentUpon>frmUtilisateur.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmConnexion.resx">
       <DependentUpon>frmConnexion.cs</DependentUpon>
@@ -175,11 +208,17 @@
     <EmbeddedResource Include="Views\Parametre\frmAnneeAcademique.resx">
       <DependentUpon>frmAnneeAcademique.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Parametre\frmCandidat.resx">
+      <DependentUpon>frmCandidat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmProfesseur.resx">
       <DependentUpon>frmProfesseur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmSession.resx">
       <DependentUpon>frmSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Parametre\frmUtilisateur.resx">
+      <DependentUpon>frmUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

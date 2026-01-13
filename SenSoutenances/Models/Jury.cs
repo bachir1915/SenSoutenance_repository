@@ -3,6 +3,6 @@
     public class Jury : Utilisateur
     {
         public string Grade { get; set; }
-        [Required, MaxLength(100)]
+        // Ajoutez d'autres propriétés si nécessaire
     }
 }
