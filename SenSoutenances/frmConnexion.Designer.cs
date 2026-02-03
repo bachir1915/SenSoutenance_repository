@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtMotDePasse = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.Label();
             this.btnSeConnecter = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -37,27 +35,7 @@
             this.txtIdentifiant = new System.Windows.Forms.TextBox();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtMotDePasse
-            // 
-            this.txtMotDePasse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotDePasse.Location = new System.Drawing.Point(29, 146);
-            this.txtMotDePasse.Name = "txtMotDePasse";
-            this.txtMotDePasse.Size = new System.Drawing.Size(360, 29);
-            this.txtMotDePasse.TabIndex = 3;
-            this.txtMotDePasse.UseSystemPasswordChar = true;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.AutoSize = true;
-            this.txtPassword.BackColor = System.Drawing.Color.Transparent;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPassword.Location = new System.Drawing.Point(25, 124);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(91, 19);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "🔒 Mot de passe";
+
             // 
             // btnSeConnecter
             // 
@@ -66,7 +44,7 @@
             this.btnSeConnecter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeConnecter.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeConnecter.ForeColor = System.Drawing.Color.White;
-            this.btnSeConnecter.Location = new System.Drawing.Point(29, 210);
+            this.btnSeConnecter.Location = new System.Drawing.Point(29, 130);
             this.btnSeConnecter.Name = "btnSeConnecter";
             this.btnSeConnecter.Size = new System.Drawing.Size(360, 45);
             this.btnSeConnecter.TabIndex = 4;
@@ -82,7 +60,7 @@
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitter.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.ForeColor = System.Drawing.Color.White;
-            this.btnQuitter.Location = new System.Drawing.Point(29, 270);
+            this.btnQuitter.Location = new System.Drawing.Point(29, 190);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(360, 45);
             this.btnQuitter.TabIndex = 5;
@@ -96,13 +74,11 @@
             this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.Controls.Add(this.lblIdentifiant);
             this.panelMain.Controls.Add(this.txtIdentifiant);
-            this.panelMain.Controls.Add(this.txtPassword);
             this.panelMain.Controls.Add(this.btnQuitter);
             this.panelMain.Controls.Add(this.btnSeConnecter);
-            this.panelMain.Controls.Add(this.txtMotDePasse);
             this.panelMain.Location = new System.Drawing.Point(62, 50);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(418, 350);
+            this.panelMain.Size = new System.Drawing.Size(418, 270);
             this.panelMain.TabIndex = 6;
             // 
             // lblIdentifiant
@@ -150,8 +126,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtMotDePasse;
-        private System.Windows.Forms.Label txtPassword;
         private System.Windows.Forms.Button btnSeConnecter;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Panel panelMain;

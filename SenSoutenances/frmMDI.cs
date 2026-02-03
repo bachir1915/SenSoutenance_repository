@@ -27,7 +27,7 @@ namespace SenSoutenance
         // =====================================================
         // Méthode générique : ouvrir un formulaire dans le MDI
         // =====================================================
-        private void OuvrirForm<T>(string titre) where T : Form, new()
+        private void OuvrirForm<T>(string titre, int tabIndex = -1) where T : Form, new()
         {
             // Vérifier si le formulaire est déjà ouvert
             Form formExistant = this.MdiChildren
@@ -35,6 +35,10 @@ namespace SenSoutenance
 
             if (formExistant != null)
             {
+                if (tabIndex != -1 && formExistant is frmUtilisateur fUtil)
+                {
+                    fUtil.SelectTab(tabIndex);
+                }
                 formExistant.BringToFront();
                 return;
             }
@@ -46,6 +50,11 @@ namespace SenSoutenance
                 MdiParent = this,
                 WindowState = FormWindowState.Maximized
             };
+
+            if (tabIndex != -1 && form is frmUtilisateur fNewUtil)
+            {
+                fNewUtil.SelectTab(tabIndex);
+            }
 
             this.Text = $"Sen Soutenance - [{titre}]";
             form.Show();
@@ -84,12 +93,12 @@ namespace SenSoutenance
 
         private void professeurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OuvrirForm<frmProfesseur>("Professeur");
+            OuvrirForm<frmUtilisateur>("Gestion Professeurs", 1);
         }
 
         private void candidatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OuvrirForm<frmCandidat>("Candidat");
+            OuvrirForm<frmUtilisateur>("Gestion Candidats", 2);
         }
 
         private void departementToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,7 +108,7 @@ namespace SenSoutenance
 
         private void chefDepartementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OuvrirForm<frmChefDepartement>("Chef Département");
+            OuvrirForm<frmUtilisateur>("Gestion Chefs Département", 3);
         }
 
         private void memoireToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,17 +158,12 @@ namespace SenSoutenance
 
         private void utilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FermerTousLesForms();
-
-            frmUtilisateur f = new frmUtilisateur();
-            f.MdiParent = this;
-            f.WindowState = FormWindowState.Maximized;
-            f.Show();
+            OuvrirForm<frmUtilisateur>("Gestion Utilisateurs", 0);
         }
 
         private void securiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            OuvrirForm<frmUtilisateur>("Sécurité", 0);
         }
     }
 }

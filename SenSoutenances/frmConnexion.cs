@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SenSoutenance
 {
-    public partial class frmConnexion : global::System.Windows.Forms.Form
+    public partial class frmConnexion : Form
     {
         BdSenSoutenanceContext db = new BdSenSoutenanceContext();
 
@@ -21,31 +21,35 @@ namespace SenSoutenance
             InitializeComponent();
         }
 
+        //string emailParDefaut = "admin@test.com";
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
-            //// Récupérer le hash du mot de passe stocké en base pour cet utilisateur
-            //var utilisateur = db.utilisateurs
-            //    .Where(u => u.EmailUtilisateur == txtIdentifiant.Text) // Utilisation de l'Email comme identifiant
-            //    .FirstOrDefault();
-
-            //if (utilisateur == null)
-            //{
-            //    MessageBox.Show("Identifiant incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            //// Vérifier le mot de passe avec le Md5Helper
-            //if (Shared.Md5Helper.VerifyMd5Hash(txtMotDePasse.Text, utilisateur.MotDePasse))
-            //{
-            //    // Connexion réussie
-              
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Mot de passe incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            frmMDI f = new frmMDI();
-            f.Show();
+            // Utilisateur par défaut
+            string emailParDefaut = "admin@test.com";
+            if (txtIdentifiant.Text.Trim() == emailParDefaut)
+            {
+                SessionUtilisateur.Login = emailParDefaut;
+                SessionUtilisateur.Role = "Admin";
+                frmMDI f1 = new frmMDI();
+                f1.Show();
+                this.Hide();
+                return;
+            }
+            // Récupérer l'utilisateur par son email
+            var utilisateur = db.utilisateurs
+                .FirstOrDefault(u => u.EmailUtilisateur == txtIdentifiant.Text);
+            if (utilisateur == null)
+            {
+                MessageBox.Show("Identifiant incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Connexion réussie - Déterminer le rôle
+            SessionUtilisateur.Login = utilisateur.EmailUtilisateur;
+            // Vérifier si c'est un Admin
+            bool isAdmin = db.admins.Any(a => a.IdUtilisateur == utilisateur.IdUtilisateur);
+            SessionUtilisateur.Role = isAdmin ? "Admin" : "User";
+            frmMDI f2 = new frmMDI();
+            f2.Show();
             this.Hide();
         }
 
@@ -60,4 +64,3 @@ namespace SenSoutenance
         }
     }
 }
-

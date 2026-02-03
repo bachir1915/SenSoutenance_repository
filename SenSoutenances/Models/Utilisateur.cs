@@ -24,7 +24,8 @@ namespace SenSoutenance.Models
         [Required, MaxLength(80), EmailAddress]
         public string EmailUtilisateur { get; set; }
 
-        [Required, MaxLength(300)]
-        public string MotDePasse { get; set; }
+        public virtual ICollection<Professeur> Professeurs { get; set; } = new HashSet<Professeur>();
+        public virtual ICollection<Candidat> Candidats { get; set; } = new HashSet<Candidat>();
+        public virtual ICollection<ChefDepartement> ChefDepartements { get; set; } = new HashSet<ChefDepartement>();
     }
 }
