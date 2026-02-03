@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using SenSoutenance.Models;
+
+namespace SenSoutenance.Views.Parametre
+{
+    public partial class frmAnneeAcademique : Form
+    {
+        private List<AnneeAcademique> annees;
+
+        public frmAnneeAcademique()
+        {
+            InitializeComponent();
+        }
+
+        private void frmAnneeAcademique_Load(object sender, EventArgs e)
+        {
+            annees = new List<AnneeAcademique>
+            {
+                new AnneeAcademique { IdAnneeAcademique = 1, LibelleAnneeAcademique = "2023-2024", AnneeAcademiqueVal = 2023 },
+                new AnneeAcademique { IdAnneeAcademique = 2, LibelleAnneeAcademique = "2024-2025", AnneeAcademiqueVal = 2024 }
+            };
+
+            ChargerDonnees();
+        }
+
+        private void ChargerDonnees()
+        {
+            dgAnneeAcademique.DataSource = null;
+            dgAnneeAcademique.AutoGenerateColumns = true;
+            dgAnneeAcademique.DataSource = annees;
+            dgAnneeAcademique.ClearSelection();
+
+            // Stylisation moderne du DataGridView
+            if (dgAnneeAcademique.ColumnCount > 0)
+            {
+                dgAnneeAcademique.EnableHeadersVisualStyles = false;
+                dgAnneeAcademique.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(44, 62, 80);
+                dgAnneeAcademique.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                dgAnneeAcademique.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+                dgAnneeAcademique.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                dgAnneeAcademique.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+                dgAnneeAcademique.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(52, 152, 219);
+                dgAnneeAcademique.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+
+                dgAnneeAcademique.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(236, 240, 241);
+                dgAnneeAcademique.AlternatingRowsDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(52, 152, 219);
+            }
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtLibelleAnneeAcademique.Text) ||
+                string.IsNullOrWhiteSpace(txtAnneeAcademiqueVal.Text))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.");
+                return;
+            }
+
+            annees.Add(new AnneeAcademique
+            {
+                IdAnneeAcademique = annees.Count + 1,
+                LibelleAnneeAcademique = txtLibelleAnneeAcademique.Text,
+                AnneeAcademiqueVal = int.Parse(txtAnneeAcademiqueVal.Text)
+            });
+
+            ChargerDonnees();
+            Effacer();
+        }
+
+        private void btnSelectionner_Click(object sender, EventArgs e)
+        {
+            if (dgAnneeAcademique.CurrentRow == null) return;
+
+            txtLibelleAnneeAcademique.Text =
+                dgAnneeAcademique.CurrentRow.Cells["LibelleAnneeAcademique"].Value.ToString();
+
+            txtAnneeAcademiqueVal.Text =
+                dgAnneeAcademique.CurrentRow.Cells["AnneeAcademiqueVal"].Value.ToString();
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            if (dgAnneeAcademique.CurrentRow == null) return;
+
+            int id = (int)dgAnneeAcademique.CurrentRow.Cells["IdAnneeAcademique"].Value;
+
+            var annee = annees.Find(a => a.IdAnneeAcademique == id);
+            if (annee == null) return;
+
+            annee.LibelleAnneeAcademique = txtLibelleAnneeAcademique.Text;
+            annee.AnneeAcademiqueVal = int.Parse(txtAnneeAcademiqueVal.Text);
+
+            ChargerDonnees();
+            Effacer();
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dgAnneeAcademique.CurrentRow == null) return;
+
+            int id = (int)dgAnneeAcademique.CurrentRow.Cells["IdAnneeAcademique"].Value;
+            annees.RemoveAll(a => a.IdAnneeAcademique == id);
+
+            ChargerDonnees();
+            Effacer();
+        }
+
+        private void Effacer()
+        {
+            txtLibelleAnneeAcademique.Clear();
+            txtAnneeAcademiqueVal.Clear();
+        }
+    }
+}
